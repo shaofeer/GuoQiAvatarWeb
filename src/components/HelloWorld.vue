@@ -140,7 +140,7 @@
 
   #home_div {
     background-image: url("../assets/backage.png");
-    background-size: 400px 900px;
+    background-size: 400px 940px;
     background-repeat: no-repeat;
   }
 
