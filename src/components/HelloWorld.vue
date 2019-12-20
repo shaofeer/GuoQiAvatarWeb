@@ -2,7 +2,7 @@
   <div id="home_div">
     <div class="top_img_div">
       <img :src="logo">
-      <img :src="topImg">
+<!--      <img :src="topImg">-->
     </div>
 
     <mu-flex align-items="center">
@@ -34,6 +34,12 @@
         <mu-carousel-item>
           <img class="item-img" :src="template3">
         </mu-carousel-item>
+        <mu-carousel-item>
+          <img class="item-img" :src="template4">
+        </mu-carousel-item>
+        <mu-carousel-item>
+          <img class="item-img" :src="template5">
+        </mu-carousel-item>
       </mu-carousel>
     </div>
 
@@ -51,7 +57,7 @@
     <br>
 
     <div class="happy_img_div">
-      <img :src="happyImg">
+      <img :src="qrcode">
       <img :src="logo">
     </div>
 
@@ -63,9 +69,11 @@
   import template1 from '../assets/template_1.png'
   import template2 from '../assets/template_2.png'
   import template3 from '../assets/template_3.png'
+  import template4 from '../assets/template_4.png'
+  import template5 from '../assets/template_5.png'
 
   import topImg from '../assets/topImg.png'
-  import happyImg from '../assets/happy.png'
+  import qrcode from '../assets/qrcode.png'
   import logo from '../assets/logo.png'
 
   export default {
@@ -75,8 +83,10 @@
         template1,
         template2,
         template3,
+        template4,
+        template5,
         topImg,
-        happyImg,
+        qrcode,
         logo,
       }
     },
@@ -105,6 +115,8 @@
           this.template1 = res.data['template1']
           this.template2 = res.data['template2']
           this.template3 = res.data['template3']
+          this.template4 = res.data['template4']
+          this.template5 = res.data['template5']
         }).catch(res => {
           console.log(res)
         })
@@ -126,6 +138,7 @@
 
   #home_div {
     background-image: url("../assets/backage.png");
+    background-size: 400px 800px ;
   }
 
   .item-img {
