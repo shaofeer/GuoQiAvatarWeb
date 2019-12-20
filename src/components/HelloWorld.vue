@@ -100,7 +100,7 @@
           // headers: {'Content-Type': 'multipart/form-data'}
         }
 
-        this.axios.post('/front/uploadFile', param, config).then(res => {
+        this.axios.post('/api/wechatavatar/uploadFile', param, config).then(res => {
           console.log(res)
           this.template1 = res.data['template1']
           this.template2 = res.data['template2']

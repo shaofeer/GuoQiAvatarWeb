@@ -22,7 +22,7 @@ import VueAxios from 'vue-axios'
 // import Qs from 'qs'
 
 var axiosInstance = axios.create({
-  baseURL: 'http://api101.wintp.top/',
+  baseURL: 'http://localhost:8888/',
   // baseURL: 'http://127.0.0.1:9009/',
   // transformRequest: function (data) {
   //   return Qs.stringify(data)
@@ -41,26 +41,3 @@ new Vue({
   components: {App},
   template: '<App/>'
 })
-
-/*
-     get
-        this.axios.get('/admin')
-          .then(res => {
-            console.log(res.data)
-          })
-          .catch(res => {
-            console.log(res.data)
-          })
-
-       post
-        this.axios.post('admin/login', {
-          'user_name': 'admin',
-          'user_pwd': 'admin'
-        }).then(res => {
-          //res.data do something right
-        }).catch(res => {
-          //do something wrong
-        })
-
-
-*/
