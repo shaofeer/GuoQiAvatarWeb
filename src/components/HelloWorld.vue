@@ -2,16 +2,17 @@
   <div id="home_div">
     <div class="top_img_div">
       <img :src="logo">
-<!--      <img :src="topImg">-->
+      <!--      <img :src="topImg">-->
     </div>
-
-    <mu-flex align-items="center">
-      <mu-flex justify-content="center" fill>
-        <mu-chip>
-          使用方式:上传头像之后,长按头像即可保存到手机。
-        </mu-chip>
+    <div class="top_title_div">
+      <mu-flex align-items="center">
+        <mu-flex justify-content="center" fill>
+          <mu-chip>
+            使用方式:上传头像之后,长按头像即可保存到手机。
+          </mu-chip>
+        </mu-flex>
       </mu-flex>
-    </mu-flex>
+    </div>
 
     <div id="carousel_div">
 
@@ -52,13 +53,14 @@
         </mu-button>
       </mu-flex>
 
-      <input ref="filElem" id="uploadFile" type="file" multiple @change='uploadFile($event)' style="display: none;"/>
+      <input ref="filElem" id="uploadFile" type="file" multiple @change='uploadFile($event)'
+             style="display: none;"/>
     </mu-flex>
     <br>
 
     <div class="happy_img_div">
       <img :src="qrcode">
-      <img :src="logo">
+<!--      <img :src="logo">-->
     </div>
 
   </div>
@@ -78,7 +80,7 @@
 
   export default {
     name: 'HelloWorld',
-    data () {
+    data() {
       return {
         template1,
         template2,
@@ -125,11 +127,11 @@
 
     },
     watch: {
-      changeTemplate (n, o) {
+      changeTemplate(n, o) {
         console.log(n)
       }
     },
-    mounted () {
+    mounted() {
     }
   }
 </script>
@@ -138,7 +140,8 @@
 
   #home_div {
     background-image: url("../assets/backage.png");
-    background-size: 400px 800px ;
+    background-size: 400px 900px;
+    background-repeat: no-repeat;
   }
 
   .item-img {
@@ -149,6 +152,10 @@
 
   .mu-carousel-item > img {
     min-width: 0px;
+  }
+
+  .top_title_div {
+    padding-top: 120px;
   }
 
   .top_img_div, .happy_img_div {
