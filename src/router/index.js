@@ -10,17 +10,11 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld,
-      meta: {
-        title: '趣学程序'
-      }
     },
     {
       path: '/niceyoo',
       name: 'HelloWorld',
       component: HelloWorld,
-      meta: {
-        title: 'niceyoo'
-      }
     }
   ]
 })

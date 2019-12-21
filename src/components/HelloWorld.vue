@@ -154,9 +154,9 @@
     },
     created() {
 
-      if ('/niceyoo' === this.$route.path) {
-        this.is_niceyoo = true
-      }
+      // if ('/niceyoo' === this.$route.path) {
+      //   this.is_niceyoo = true
+      // }
     }
   }
 </script>
