@@ -1,7 +1,8 @@
 <template>
   <div id="home_div">
     <div class="top_img_div">
-      <img :src="logo">
+      <img :src="logo_niceyoo" v-if="is_niceyoo">
+      <img :src="logo" v-else>
       <!--      <img :src="topImg">-->
     </div>
     <div class="top_title_div">
@@ -59,11 +60,13 @@
     <br>
 
     <div class="happy_img_div">
-      <img :src="qrcode">
-<!--      <img :src="logo">-->
+      <img :src="qrcode_niceyoo" v-if="is_niceyoo">
+      <img :src="qrcode" v-else>
+      <!--      <img :src="logo">-->
     </div>
-
   </div>
+
+
 </template>
 
 <script>
@@ -77,6 +80,9 @@
   import topImg from '../assets/topImg.png'
   import qrcode from '../assets/qrcode.png'
   import logo from '../assets/logo.png'
+  import logo_niceyoo from '../assets/logo_niceyoo.png'
+  import qrcode_niceyoo from '../assets/qrcode_niceyoo.png'
+
 
   export default {
     name: 'HelloWorld',
@@ -90,6 +96,9 @@
         topImg,
         qrcode,
         logo,
+        qrcode_niceyoo,
+        logo_niceyoo,
+        is_niceyoo: false,
       }
     },
     methods: {
@@ -128,10 +137,26 @@
     },
     watch: {
       changeTemplate(n, o) {
-        console.log(n)
       }
     },
     mounted() {
+    },
+    beforeCreate() {
+      var ua = navigator.userAgent.toLowerCase();
+      //获取判断用的对象
+      if (ua.match(/MicroMessenger/i) == "micromessenger") {
+        //在微信中打开
+      } else {
+        console.log("非微信中打开");
+        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx&connect_redirect=1#wechat_redirect';
+      }
+
+    },
+    created() {
+
+      if ('/niceyoo' === this.$route.path) {
+        this.is_niceyoo = true
+      }
     }
   }
 </script>
