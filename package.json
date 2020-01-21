@@ -21,6 +21,7 @@
     "muse-ui-toast": "^0.3.0",
     "vue": "^2.5.2",
     "vue-axios": "^2.1.4",
+    "vue-meditor": "^2.1.1",
     "vue-router": "^3.0.1",
     "vue-wechat-title": "^2.0.5"
   },
