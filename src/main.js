@@ -13,6 +13,10 @@ import 'muse-ui/dist/muse-ui.css'
 import Toast from 'muse-ui-toast'
 import './assets/font/material-icons.css'
 
+import VueClipboard from 'vue-clipboard2'
+
+Vue.use(VueClipboard)
+
 Vue.use(MuseUI)
 Vue.use(Toast)
 
@@ -22,13 +26,15 @@ import VueAxios from 'vue-axios'
 // import Qs from 'qs'
 
 var axiosInstance = axios.create({
-  baseURL: 'http://api.mptask.wintp.top/',
-  // baseURL: 'http://127.0.0.1:8888/',
+  // baseURL: 'http://api.mptask.wintp.top/',
+  baseURL: 'http://127.0.0.1:8888/',
   // transformRequest: function (data) {
   //   return Qs.stringify(data)
   // },
   // headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 })
+
+
 
 Vue.use(VueAxios, axiosInstance)
 
