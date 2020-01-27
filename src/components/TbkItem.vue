@@ -13,7 +13,7 @@
             <p>
               <span class="del">￥{{zkFinalPrice}}</span>
               <span class="price">￥{{finalPrice}}</span>
-              <mu-button color="red" class="btn-right" @click="copyTKL">
+              <mu-button color="#FC6E05" class="btn-right" @click="copyTKL">
                 复制口令
               </mu-button>
             </p>

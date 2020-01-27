@@ -1,21 +1,19 @@
 <template>
   <div class="root">
     <mu-paper :z-depth="1" class="demo-loadmore-wrap">
-      <mu-appbar color="gray">
+      <mu-appbar color="#FDC305">
         <!--        <mu-button icon slot="left">-->
         <!--          <mu-icon value="menu"></mu-icon>-->
         <!--        </mu-button>-->
-        九块九包邮
+        <mu-alert color="#FDC305" class="title_span" v-if="alert" @delete="closeAlert()">
+          <mu-icon left value="priority_high"></mu-icon>
+          使用方法:&nbsp;&nbsp;&nbsp;&nbsp;点击复制口令，打开淘宝！
+        </mu-alert>
+
         <mu-button icon slot="right" @click="refresh()">
           <mu-icon value="refresh"></mu-icon>
         </mu-button>
       </mu-appbar>
-
-
-      <mu-alert color="success" class="title_span" delete v-if="alert" @delete="closeAlert()">
-        <mu-icon left value="priority_high"></mu-icon>
-        使用方法:点击立即领券，打开淘宝！
-      </mu-alert>
 
 
       <mu-container ref="container" class="demo-loadmore-content">
