@@ -27,6 +27,7 @@
                 :shortTitle="item.shortTitle"
                 :pictUrl="item.pictUrl"
                 :itemUrl="item.itemUrl"
+                :couponShareUrl="item.couponShareUrl"
                 :zkFinalPrice="parseInt(item.zkFinalPrice).toFixed(2)"
                 :finalPrice
                   ="(item.zkFinalPrice-(item.couponAmount?item.couponAmount:0)).toFixed(2)"

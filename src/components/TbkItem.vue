@@ -12,9 +12,9 @@
           <mu-flex class="item">
             <p>
               <span class="del">￥{{zkFinalPrice}}</span>
-              <span class="price">券后￥{{finalPrice}}</span>
+              <span class="price">￥{{finalPrice}}</span>
               <mu-button color="red" class="btn-right" @click="copyTKL">
-                立即领券
+                复制口令
               </mu-button>
             </p>
           </mu-flex>
@@ -39,6 +39,7 @@
       'zkFinalPrice',
       'finalPrice',
       'itemId',
+      'couponShareUrl',
     ],
     data() {
       return {
@@ -49,12 +50,12 @@
       copyTKL() {
         console.log("getPrivilegeAndTKL");
         let param = {
-          productId: this.itemId
+          url: this.couponShareUrl
         }
 
         let _this = this
 
-        this.axios.get('/api/tbkInfo/getPrivilegeAndTKL', {
+        this.axios.get('/api/tbkInfo/getTpwdCreate', {
           params: param
         }).then(res => {
           console.log(res)
@@ -65,11 +66,14 @@
             _this.model = model
 
             _this.$copyText(_this.model).then(function (e) {
-              Toast.success('复制成功!');
+              _this.$toast.success('复制成功!');
 
             }, function (e) {
+              _this.$toast.error('复制失败!');
 
             })
+          }else{
+            _this.$toast.error('复制失败!');
           }
 
 
@@ -88,7 +92,7 @@
     margin-top: 10px;
 
     p {
-      width: 283px; /*根据自己项目进行定义宽度*/
+      width: 244px; /*根据自己项目进行定义宽度*/
     }
 
   }
