@@ -27,6 +27,7 @@ import VueAxios from 'vue-axios'
 
 var axiosInstance = axios.create({
   baseURL: 'http://api.mptask.wintp.top/',
+  // baseURL: 'http://192.168.1.6:8888/',
   // baseURL: 'http://127.0.0.1:8888/',
   // transformRequest: function (data) {
   //   return Qs.stringify(data)

@@ -39,46 +39,29 @@
       'zkFinalPrice',
       'finalPrice',
       'itemId',
-      'couponShareUrl',
+      'model',
     ],
     data() {
       return {
-        model: ""
       }
     },
+
+    watch: {},
     methods: {
       copyTKL() {
-        console.log("getPrivilegeAndTKL");
-        let param = {
-          url: this.couponShareUrl
-        }
 
         let _this = this
 
-        this.axios.get('/api/tbkInfo/getTpwdCreate', {
-          params: param
-        }).then(res => {
-          console.log(res)
-          console.log(res.data.code)
-          if (res.data.code == 200) {
+        this.$copyText("淘口令" + this.model).then(function (e) {
+          console.log(e);
+          _this.$toast.success('复制成功!');
 
-            let model = res.data.result;
-            _this.model = model
-
-            _this.$copyText(_this.model).then(function (e) {
-              _this.$toast.success('复制成功!');
-
-            }, function (e) {
-              _this.$toast.error('复制失败!');
-
-            })
-          }else{
-            _this.$toast.error('复制失败!');
-          }
+        }, function (e) {
+          console.log(e);
+          _this.$toast.error('复制失败!' + e.text);
+          _this.$toast.error(e.text);
 
 
-        }).catch(res => {
-          console.log(res)
         })
       }
     }
